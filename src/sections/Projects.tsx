@@ -22,15 +22,43 @@ function Projects() {
             className="flex h-full flex-col rounded-[var(--radius)] border border-white/10 bg-[var(--surface)]/80 p-6 shadow-[0_30px_80px_rgba(7,10,18,0.5)] transition hover:-translate-y-1 hover:border-white/30"
             key={project.title}
           >
-            <div className="flex items-center justify-between gap-4">
+            <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl border border-white/10 bg-[var(--bg-alt)]/70">
+              {project.image ? (
+                <img
+                  alt={`${project.title} screenshot`}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                  src={project.image}
+                />
+              ) : (
+                <div className="flex h-full items-end bg-gradient-to-br from-white/10 via-transparent to-black/30 p-4 text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
+                  Screenshot placeholder
+                </div>
+              )}
+            </div>
+            <div className="mt-6 flex items-center justify-between gap-4">
               <p className="text-sm text-[var(--muted)]">{project.role}</p>
               <div className="flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-[var(--accent)]">
-                <a className="hover:text-white" href={project.live} target="_blank">
-                  Live
-                </a>
-                <a className="hover:text-white" href={project.repo} target="_blank">
-                  GitHub
-                </a>
+                {project.live ? (
+                  <a
+                    className="hover:text-white"
+                    href={project.live}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Live
+                  </a>
+                ) : null}
+                {project.repo ? (
+                  <a
+                    className="hover:text-white"
+                    href={project.repo}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+                ) : null}
               </div>
             </div>
             <h3 className="mt-4 text-xl font-semibold">{project.title}</h3>
