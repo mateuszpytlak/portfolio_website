@@ -7,7 +7,7 @@ function Header() {
           <p className="text-sm uppercase tracking-[0.24em] text-[var(--muted)]">
             Frontend Portfolio
           </p>
-          <p className="text-lg font-semibold">Mateusz</p>
+          <p className="text-lg font-semibold">Mateusz Pytlak</p>
         </div>
       </div>
       <nav className="flex flex-wrap gap-6 text-sm text-[var(--muted)]">

@@ -1,29 +1,19 @@
 export const projects = [
   {
-    title: 'Aurora Commerce',
-    role: 'Frontend Lead',
-    stack: ['React', 'TypeScript', 'Tailwind', 'Vite'],
-    summary:
-      'High-converting storefront with a modular design system and motion-forward UX.',
-    result: 'Lifted checkout conversion by 18% in 6 weeks.',
-    link: 'https://example.com',
-  },
-  {
-    title: 'Northwind Studio',
-    role: 'UI Engineer',
-    stack: ['React', 'Zustand', 'GSAP'],
-    summary:
-      'Portfolio platform with dynamic case studies, immersive transitions, and CMS sync.',
-    result: 'Cut content publishing time from days to hours.',
-    link: 'https://example.com',
-  },
-  {
-    title: 'Pulse Analytics',
+    title: 'Mini e-Commerce App',
     role: 'Frontend Developer',
-    stack: ['React', 'TypeScript', 'Recharts'],
+    stack: [
+      'React',
+      'TypeScript',
+      'Zustand',
+      'Zod',
+      'React Router',
+      'Tailwind',
+    ],
     summary:
-      'Data-heavy dashboard with fast filters, smart defaults, and lightweight theming.',
-    result: 'Reduced time-to-insight by 32% for core users.',
-    link: 'https://example.com',
+      'E-commerce demo with product discovery, cart persistence, and a validated checkout flow powered by Fake Store API.',
+    result: 'Focused on clean component structure, global state, and API integration.',
+    live: 'https://react-store-demo-six.vercel.app/products',
+    repo: 'https://github.com/mateuszpytlak/react-store-demo',
   },
 ]
