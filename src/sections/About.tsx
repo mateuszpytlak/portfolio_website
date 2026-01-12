@@ -30,7 +30,7 @@ function About() {
           Frontend developer focused on shipping reliable UI.
         </h2>
         <p className="text-[var(--muted)]">
-          I hold an MEng in Environmental Engineering from Poznan University of
+          I hold an MEng in Building Services Engineering from Poznan University of
           Technology and transitioned into frontend development. I build and
           refine web experiences with a focus on clarity, performance, and
           maintainability.
