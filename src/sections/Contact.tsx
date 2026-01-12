@@ -64,7 +64,7 @@ function Contact() {
             </a>
           </div>
           <p className="mt-4 text-white">Location</p>
-          <p>Poznan, Poland (remote)</p>
+          <p>Poznań, Poland (remote)</p>
         </div>
       </div>
       <form
