@@ -1,16 +1,58 @@
 import { useState, type FormEvent } from 'react'
+import { z } from 'zod'
 
 const formEndpoint = 'https://formspree.io/f/xqeekpge'
+const contactSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(2, 'Please enter your name.')
+    .max(80, 'Name is too long.'),
+  email: z.string().trim().email('Please enter a valid email.'),
+  title: z
+    .string()
+    .trim()
+    .max(120, 'Message title is too long.')
+    .optional()
+    .or(z.literal('')),
+  message: z
+    .string()
+    .trim()
+    .min(10, 'Please add a few details.')
+    .max(1000, 'Message is too long.'),
+})
 
 function Contact() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [errors, setErrors] = useState<Record<string, string>>({})
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setStatus('submitting')
+    setErrors({})
 
     const form = event.currentTarget
     const formData = new FormData(form)
+    const payload = {
+      name: String(formData.get('name') ?? ''),
+      email: String(formData.get('email') ?? ''),
+      title: String(formData.get('title') ?? ''),
+      message: String(formData.get('message') ?? ''),
+    }
+
+    const result = contactSchema.safeParse(payload)
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {}
+      result.error.issues.forEach((issue) => {
+        const field = issue.path[0]
+        if (typeof field === 'string' && !fieldErrors[field]) {
+          fieldErrors[field] = issue.message
+        }
+      })
+      setErrors(fieldErrors)
+      setStatus('idle')
+      return
+    }
 
     try {
       const response = await fetch(formEndpoint, {
@@ -87,11 +129,18 @@ function Contact() {
             </label>
             <input
               className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--accent)]"
+              aria-describedby={errors.name ? 'contact-name-error' : undefined}
+              aria-invalid={errors.name ? 'true' : undefined}
               name="name"
               placeholder="Your name"
               required
               type="text"
             />
+            {errors.name ? (
+              <p className="text-xs text-red-300" id="contact-name-error">
+                {errors.name}
+              </p>
+            ) : null}
           </div>
           <div className="space-y-2">
             <label className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
@@ -99,11 +148,18 @@ function Contact() {
             </label>
             <input
               className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--accent)]"
+              aria-describedby={errors.email ? 'contact-email-error' : undefined}
+              aria-invalid={errors.email ? 'true' : undefined}
               name="email"
               placeholder="name@company.com"
               required
               type="email"
             />
+            {errors.email ? (
+              <p className="text-xs text-red-300" id="contact-email-error">
+                {errors.email}
+              </p>
+            ) : null}
           </div>
         </div>
         <div className="space-y-2">
@@ -112,10 +168,17 @@ function Contact() {
           </label>
           <input
             className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--accent)]"
-            name="project"
+            aria-describedby={errors.title ? 'contact-title-error' : undefined}
+            aria-invalid={errors.title ? 'true' : undefined}
+            name="title"
             placeholder="Recruitment opportunity"
             type="text"
           />
+          {errors.title ? (
+            <p className="text-xs text-red-300" id="contact-title-error">
+              {errors.title}
+            </p>
+          ) : null}
         </div>
         <div className="space-y-2">
           <label className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
@@ -123,9 +186,17 @@ function Contact() {
           </label>
           <textarea
             className="min-h-[140px] w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--accent)]"
+            aria-describedby={errors.message ? 'contact-message-error' : undefined}
+            aria-invalid={errors.message ? 'true' : undefined}
             name="message"
             placeholder="Share the role, tech stack, location, start date, and next steps."
+            required
           />
+          {errors.message ? (
+            <p className="text-xs text-red-300" id="contact-message-error">
+              {errors.message}
+            </p>
+          ) : null}
         </div>
         <button
           className="w-full rounded-full border border-black/10 bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-black shadow-[0_12px_28px_rgba(108,246,208,0.28)] transition hover:translate-y-[-1px] hover:brightness-95"
