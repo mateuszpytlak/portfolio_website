@@ -1,4 +1,10 @@
-const highlights = ['React focus', 'Tailwind v4 design tokens', 'AI-assisted delivery']
+const highlights = [
+  '5 years experience',
+  'React + TypeScript + Tailwind',
+  'Frontend Developer roles',
+]
+
+const currentYear = new Date().getFullYear()
 
 function Hero() {
   return (
@@ -30,7 +36,7 @@ function Hero() {
             className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
             href="#contact"
           >
-            Book a Call
+            Send a Message
           </a>
         </div>
         <div className="grid max-w-xl gap-4 text-sm text-[var(--muted)] sm:grid-cols-3">
@@ -56,17 +62,15 @@ function Hero() {
               <p className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
                 Spotlight
               </p>
-              <h2 className="text-2xl font-semibold">
-                Focused on React-driven UI delivery
-              </h2>
+              <h2 className="text-2xl font-semibold">Recruiter snapshot</h2>
             </div>
             <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-[var(--muted)]">
-              2024
+              {currentYear}
             </span>
           </div>
           <p className="text-sm text-[var(--muted)]">
-            I build component-driven interfaces that are easy to maintain and
-            scale, with careful typography and layout decisions.
+            Open to frontend roles. Based in Poznan, available for remote and
+            hybrid opportunities.
           </p>
           <div className="grid gap-3">
             {highlights.map((item) => (
@@ -84,7 +88,7 @@ function Hero() {
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
             Based in
           </p>
-          <p className="mt-2 text-lg font-semibold text-white">Poznan, Poland</p>
+          <p className="mt-2 text-lg font-semibold text-white">Poznań, Poland</p>
           <p className="mt-2">Open to remote and hybrid roles.</p>
         </div>
       </div>
