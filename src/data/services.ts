@@ -1,14 +1,14 @@
 export const services = [
   {
-    title: 'Product UI',
-    detail: 'High-fidelity interfaces that feel fast, clear, and premium.',
+    title: 'Product UI delivery',
+    detail: 'Translate designs into responsive, polished interfaces.',
   },
   {
-    title: 'Frontend Architecture',
-    detail: 'Scalable component systems, state, and data flows.',
+    title: 'Component systems',
+    detail: 'Consistent patterns, reusable UI, and scalable structure.',
   },
   {
-    title: 'Motion & Interactions',
-    detail: 'Micro and macro interactions that guide attention.',
+    title: 'Performance + accessibility',
+    detail: 'Fast, readable UI with practical a11y improvements.',
   },
 ]

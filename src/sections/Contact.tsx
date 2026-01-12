@@ -203,7 +203,7 @@ function Contact() {
           disabled={status === 'submitting'}
           type="submit"
         >
-          {status === 'submitting' ? 'Sending...' : 'Send message'}
+          {status === 'submitting' ? 'Sending...' : 'Send role details'}
         </button>
         {status === 'success' ? (
           <p className="text-xs text-[var(--accent)]" role="status">

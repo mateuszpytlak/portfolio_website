@@ -36,7 +36,7 @@ function Hero() {
             className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40"
             href="#contact"
           >
-            Send a Message
+            Share a Role
           </a>
         </div>
         <div className="grid max-w-xl gap-4 text-sm text-[var(--muted)] sm:grid-cols-3">

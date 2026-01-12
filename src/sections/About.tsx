@@ -27,17 +27,18 @@ function About() {
           About
         </p>
         <h2 className="text-3xl font-semibold">
-          Frontend developer with a technical engineering background.
+          Frontend developer focused on shipping reliable UI.
         </h2>
         <p className="text-[var(--muted)]">
           I hold an MEng in Environmental Engineering from Poznan University of
-          Technology, then switched careers into IT. My current role is at a
-          marketing agency, where I build and refine web experiences for real
-          clients.
+          Technology and transitioned into frontend development. I build and
+          refine web experiences with a focus on clarity, performance, and
+          maintainability.
         </p>
         <p className="text-[var(--muted)]">
-          After 5 years across multiple stacks, I am now focused on React +
-          TypeScript to grow as a frontend specialist and ship polished interfaces.
+          After 5 years across multiple stacks, I am focused on React +
+          TypeScript, collaborating closely with design and product to deliver
+          production-ready interfaces.
         </p>
       </div>
       <div className="space-y-4">
