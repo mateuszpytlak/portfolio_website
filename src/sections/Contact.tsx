@@ -1,4 +1,38 @@
+import { useState, type FormEvent } from 'react'
+
+const formEndpoint = 'https://formspree.io/f/xqeekpge'
+
 function Contact() {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setStatus('submitting')
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+
+    try {
+      const response = await fetch(formEndpoint, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json',
+        },
+      })
+
+      if (response.ok) {
+        form.reset()
+        setStatus('success')
+        return
+      }
+    } catch (error) {
+      console.error(error)
+    }
+
+    setStatus('error')
+  }
+
   return (
     <section
       className="grid gap-10 rounded-[var(--radius)] border border-white/10 bg-[var(--bg-alt)]/70 p-10 md:grid-cols-[1.1fr_0.9fr]"
@@ -8,17 +42,13 @@ function Contact() {
         <p className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
           Contact
         </p>
-        <h2 className="text-3xl font-semibold">Let's build your next UI.</h2>
+        <h2 className="text-3xl font-semibold">Let&apos;s connect.</h2>
         <p className="text-[var(--muted)]">
-          Tell me about your product, timeline, and goals. I reply within 24-48h
-          with next steps and a clear scope proposal.
+          If you are recruiting for frontend roles, share the role details and
+          your hiring timeline. I usually reply within 24-48h.
         </p>
         <div className="rounded-3xl border border-white/10 bg-black/30 p-6 text-sm text-[var(--muted)]">
-          <p className="text-white">Email</p>
-          <a className="underline decoration-white/30" href="mailto:hello@yourdomain.com">
-            hello@yourdomain.com
-          </a>
-          <p className="mt-4 text-white">Links</p>
+          <p className="text-white">Links</p>
           <div className="flex flex-wrap gap-3">
             <a
               className="underline decoration-white/30"
@@ -37,58 +67,83 @@ function Contact() {
           <p>Poznan, Poland (remote)</p>
         </div>
       </div>
-      <form className="space-y-4">
+      <form
+        action={formEndpoint}
+        className="space-y-4"
+        onSubmit={handleSubmit}
+        method="POST"
+      >
+        <input
+          aria-hidden="true"
+          className="hidden"
+          name="_gotcha"
+          tabIndex={-1}
+          type="text"
+        />
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-2">
             <label className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
-              Name
+              Full name
             </label>
             <input
               className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--accent)]"
+              name="name"
               placeholder="Your name"
+              required
               type="text"
             />
           </div>
           <div className="space-y-2">
             <label className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
-              Email
+              Work email
             </label>
             <input
               className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--accent)]"
-              placeholder="you@email.com"
+              name="email"
+              placeholder="name@company.com"
+              required
               type="email"
             />
           </div>
         </div>
         <div className="space-y-2">
           <label className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
-            Project
+            Message title
           </label>
           <input
             className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--accent)]"
-            placeholder="Website, product, redesign, etc."
+            name="project"
+            placeholder="Recruitment opportunity"
             type="text"
           />
         </div>
         <div className="space-y-2">
           <label className="text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
-            Details
+            Message
           </label>
           <textarea
             className="min-h-[140px] w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm text-white outline-none transition focus:border-[var(--accent)]"
-            placeholder="Timeline, goals, success metrics..."
+            name="message"
+            placeholder="Share the role, tech stack, location, start date, and next steps."
           />
         </div>
         <button
           className="w-full rounded-full border border-black/10 bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-black shadow-[0_12px_28px_rgba(108,246,208,0.28)] transition hover:translate-y-[-1px] hover:brightness-95"
-          type="button"
+          disabled={status === 'submitting'}
+          type="submit"
         >
-          Send message
+          {status === 'submitting' ? 'Sending...' : 'Send message'}
         </button>
-        <p className="text-xs text-[var(--muted)]">
-          The form is static for now. Hook it to your email or backend when
-          ready.
-        </p>
+        {status === 'success' ? (
+          <p className="text-xs text-[var(--accent)]" role="status">
+            Message sent. I will reply soon.
+          </p>
+        ) : null}
+        {status === 'error' ? (
+          <p className="text-xs text-red-300" role="status">
+            Something went wrong. Please try again.
+          </p>
+        ) : null}
       </form>
     </section>
   )
