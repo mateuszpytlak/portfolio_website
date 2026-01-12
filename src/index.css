@@ -41,8 +41,11 @@ h3,
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+}
+
+a:where(:not([class])) {
+  color: inherit;
 }
 
 @keyframes fade-up {

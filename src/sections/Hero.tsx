@@ -21,7 +21,7 @@ function Hero() {
         </div>
         <div className="flex flex-wrap gap-4">
           <a
-            className="rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-black transition hover:translate-y-[-1px]"
+            className="rounded-full border border-black/10 bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-black shadow-[0_12px_28px_rgba(108,246,208,0.28)] transition hover:translate-y-[-1px] hover:brightness-95"
             href="#projects"
           >
             View Projects
