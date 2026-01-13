@@ -2,7 +2,13 @@ function Header() {
   return (
     <header className="flex flex-wrap items-center justify-between gap-6">
       <a className="flex items-center gap-3" href="/">
-        <div className="h-10 w-10 rounded-full border border-white/10 bg-[var(--bg-alt)]/80" />
+        <div className="h-10 w-10 overflow-hidden rounded-full border border-white/10 bg-[var(--bg-alt)]/80">
+          <img
+            alt="Mateusz Pytlak"
+            className="h-full w-full object-cover"
+            src="/src/assets/avatar.jpg"
+          />
+        </div>
         <div>
           <p className="text-sm uppercase tracking-[0.24em] text-[var(--muted)]">
             Frontend Portfolio
