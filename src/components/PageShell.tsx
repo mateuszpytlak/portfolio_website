@@ -29,7 +29,7 @@ function PageShell({
             <div className="pointer-events-none absolute left-[-120px] top-36 h-[420px] w-[420px] rounded-full bg-[var(--accent)]/20 blur-[120px]" />
           </>
         )}
-        <div className="mx-auto max-w-6xl px-6 pt-10">
+        <div className="mx-auto max-w-6xl px-6 py-5">
           <Header />
           {top}
         </div>

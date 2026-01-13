@@ -16,17 +16,17 @@ function Header() {
           <p className="text-lg font-semibold">Mateusz Pytlak</p>
         </div>
       </a>
-      <nav className="flex flex-wrap gap-6 text-sm text-[var(--muted)]">
-        <a className="hover:text-white" href="/#about">
+      <nav className="flex flex-wrap items-center gap-6 text-sm leading-none text-[var(--muted)]">
+        <a className="inline-flex items-center py-2 hover:text-white" href="/#about">
           About
         </a>
-        <a className="hover:text-white" href="/#services">
+        <a className="inline-flex items-center py-2 hover:text-white" href="/#services">
           Strengths
         </a>
-        <a className="hover:text-white" href="/#projects">
+        <a className="inline-flex items-center py-2 hover:text-white" href="/#projects">
           Projects
         </a>
-        <a className="hover:text-white" href="/#contact">
+        <a className="inline-flex items-center py-2 hover:text-white" href="/#contact">
           Contact
         </a>
       </nav>
