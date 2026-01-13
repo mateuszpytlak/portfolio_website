@@ -36,9 +36,10 @@ export const projects = [
     thumbGallery: [ecommerceThumb1, ecommerceThumb2, ecommerceThumb3, ecommerceThumb4],
     gallery: [ecommerceScreen1, ecommerceScreen2, ecommerceScreen3, ecommerceScreen4],
     description: [
-      'A compact e-commerce experience focused on product discovery, cart persistence, and a clean checkout flow.',
-      'I built reusable product cards, stateful cart logic, and a lightweight validation layer for the checkout.',
-      'The goal was to keep the UI fast and readable while integrating a public API.',
+      'React Store Demo is a modern e-commerce storefront built with React 19 + TypeScript and bundled with Vite. It consumes the public Fake Store API to provide a complete product browsing experience with category filtering, debounced text search, and multiple sorting modes. The UI is tailored for a polished portfolio presentation with card-based layouts, glassmorphism styling, and responsive grids that scale from mobile to desktop.',
+      'Product discovery loads all products once and caches them in a persisted Zustand store to minimize repeat fetches. Users can filter by category, search by title, and sort by price or title with consistent state across views. Individual product pages fetch by id, display metadata and ratings, and enable add-to-cart actions.',
+      'The cart is persistent with quantity controls, totals, item removal, and a summary panel; totals are computed in-store. Checkout uses React Hook Form + Zod validation, simulates a processing delay, and clears the cart on submit. Firebase Authentication powers login and registration, while the My Orders view reads history from Firestore for authenticated users.',
+      'The codebase separates concerns with dedicated API, store, and page layers; the API module encapsulates fetchProducts, fetchProductById, and fetchCategories with error handling. Stores are split by domain (cart, products, auth) and persist state to localStorage for a resilient UX. Routing uses React Router v7 with dedicated pages for products, product details, cart, checkout, login, and account; loading and error states are handled in all data-driven views. Tests cover utilities, API logic, product cards, cart interactions, and store math.',
     ],
     challenges: [
       'Normalizing API data and keeping UI state consistent across views.',
