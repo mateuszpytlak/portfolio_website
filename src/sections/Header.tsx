@@ -1,3 +1,5 @@
+import avatar from "../assets/avatar.jpg"
+
 function Header() {
   return (
     <header className="flex flex-wrap items-center justify-between gap-6">
@@ -6,7 +8,7 @@ function Header() {
           <img
             alt="Mateusz Pytlak"
             className="h-full w-full object-cover"
-            src="/src/assets/avatar.jpg"
+            src={avatar}
           />
         </div>
         <div>
