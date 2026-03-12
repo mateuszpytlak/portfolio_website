@@ -1,6 +1,8 @@
 import PageShell from '../components/PageShell'
 
 function Privacy() {
+  const email = ['gptrackersupport', '@', 'gmail.com'].join('')
+
   return (
     <PageShell mainClassName="py-12 md:py-16" withDecorations={false}>
       <div className="mx-auto max-w-3xl space-y-10">
@@ -22,9 +24,9 @@ function Privacy() {
             Contact:{' '}
             <a
               className="text-[var(--text)] hover:text-[var(--accent)]"
-              href="mailto:mateuszpytlak.morotsportapp@gmail.com"
+              href={`mailto:${email}`}
             >
-              mateuszpytlak.morotsportapp@gmail.com
+              {email}
             </a>
           </p>
         </section>
