@@ -8,7 +8,7 @@ function App() {
   return (
     <Routes>
       <Route element={<Home />} path="/" />
-      <Route element={<Privacy />} path="/apps/motorsport-weekend/privacy" />
+      <Route element={<Privacy />} path="/apps/gp-tracker/privacy" />
       <Route element={<ProjectDetail />} path="/projects/:slug" />
     </Routes>
   )

@@ -9,7 +9,7 @@ function Privacy() {
             Legal
           </p>
           <h1 className="text-3xl font-semibold md:text-4xl">
-            Privacy Policy - Motorsport Weekend
+            Privacy Policy - GP Tracker
           </h1>
           <p className="text-sm text-[var(--muted)]">Date: 2026-01-13</p>
         </header>
@@ -32,7 +32,7 @@ function Privacy() {
         <section className="space-y-3">
           <h2 className="text-xl font-semibold">Scope and purpose</h2>
           <p className="text-[var(--muted)]">
-            &quot;Motorsport Weekend&quot; is a widget that shows the schedule
+            &quot;GP Tracker&quot; is a widget that shows the schedule
             for the next race weekend. We do not collect personal data, we do
             not use analytics or profiling, and we do not show ads.
           </p>
