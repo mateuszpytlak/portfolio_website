@@ -17,38 +17,39 @@ const renderAt = (path: string) =>
   )
 
 describe('App routing', () => {
-  it('renders Home at /', () => {
+  it('renders Home at /', async () => {
     renderAt('/')
-    expect(screen.getByText('Home Page')).toBeInTheDocument()
+    expect(await screen.findByText('Home Page')).toBeInTheDocument()
   })
 
-  it('renders Privacy at /apps/gp-tracker/privacy', () => {
+  it('renders Privacy at /apps/gp-tracker/privacy', async () => {
     renderAt('/apps/gp-tracker/privacy')
-    expect(screen.getByText('Privacy Page')).toBeInTheDocument()
+    expect(await screen.findByText('Privacy Page')).toBeInTheDocument()
   })
 
-  it('renders ProjectDetail at /projects/:slug', () => {
+  it('renders ProjectDetail at /projects/:slug', async () => {
     renderAt('/projects/mini-ecommerce-app')
-    expect(screen.getByText('Project Detail Page')).toBeInTheDocument()
+    expect(await screen.findByText('Project Detail Page')).toBeInTheDocument()
   })
 
-  it('renders ProjectDetail for any valid slug', () => {
+  it('renders ProjectDetail for any valid slug', async () => {
     renderAt('/projects/arc-raiders-loot-table')
-    expect(screen.getByText('Project Detail Page')).toBeInTheDocument()
+    expect(await screen.findByText('Project Detail Page')).toBeInTheDocument()
   })
 
-  it('renders NotFound for unknown routes', () => {
+  it('renders NotFound for unknown routes', async () => {
     renderAt('/this-does-not-exist')
-    expect(screen.getByText('Not Found Page')).toBeInTheDocument()
+    expect(await screen.findByText('Not Found Page')).toBeInTheDocument()
   })
 
-  it('renders NotFound for deeply nested unknown routes', () => {
+  it('renders NotFound for deeply nested unknown routes', async () => {
     renderAt('/projects/unknown-slug/extra-segment')
-    expect(screen.getByText('Not Found Page')).toBeInTheDocument()
+    expect(await screen.findByText('Not Found Page')).toBeInTheDocument()
   })
 
-  it('does not render Home content on a wrong route', () => {
+  it('does not render Home content on a wrong route', async () => {
     renderAt('/about')
+    await screen.findByText('Not Found Page')
     expect(screen.queryByText('Home Page')).not.toBeInTheDocument()
   })
 })

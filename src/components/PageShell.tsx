@@ -22,6 +22,12 @@ function PageShell({
 
   return (
     <div className="min-h-screen bg-[var(--bg)] text-[var(--text)]">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-black focus:bg-[var(--accent)] focus:rounded-br-2xl"
+      >
+        Skip to main content
+      </a>
       <div className="relative overflow-hidden">
         {withDecorations && (
           <>
@@ -34,7 +40,7 @@ function PageShell({
           {top}
         </div>
       </div>
-      <main className={mainClasses}>{children}</main>
+      <main id="main" className={mainClasses}>{children}</main>
       <Footer />
     </div>
   )

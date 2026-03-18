@@ -1,18 +1,21 @@
+import { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-import Home from './pages/Home'
-import NotFound from './pages/NotFound'
-import Privacy from './pages/Privacy'
-import ProjectDetail from './pages/ProjectDetail'
+const Home = lazy(() => import('./pages/Home'))
+const NotFound = lazy(() => import('./pages/NotFound'))
+const Privacy = lazy(() => import('./pages/Privacy'))
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
 
 function App() {
   return (
-    <Routes>
-      <Route element={<Home />} path="/" />
-      <Route element={<Privacy />} path="/apps/gp-tracker/privacy" />
-      <Route element={<ProjectDetail />} path="/projects/:slug" />
-      <Route element={<NotFound />} path="*" />
-    </Routes>
+    <Suspense fallback={null}>
+      <Routes>
+        <Route element={<Home />} path="/" />
+        <Route element={<Privacy />} path="/apps/gp-tracker/privacy" />
+        <Route element={<ProjectDetail />} path="/projects/:slug" />
+        <Route element={<NotFound />} path="*" />
+      </Routes>
+    </Suspense>
   )
 }
 
