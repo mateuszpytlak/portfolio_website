@@ -12,7 +12,7 @@ function Services() {
             What I bring to a frontend team.
           </h2>
         </div>
-        <p className="max-w-lg text-sm text-[var(--muted)]">
+        <p className="max-w-lg text-sm text-(--muted)">
           I work directly with design and product - turning specs into
           working UI and iterating until it's right.
         </p>
@@ -25,12 +25,6 @@ function Services() {
           >
             <h3 className="text-xl font-semibold">{service.title}</h3>
             <p className="mt-3 text-sm text-[var(--muted)]">{service.detail}</p>
-            <div className="mt-6 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-[var(--muted)]">
-              Learn more
-              <span className="text-base text-white transition group-hover:translate-x-1">
-                →
-              </span>
-            </div>
           </div>
         ))}
       </div>

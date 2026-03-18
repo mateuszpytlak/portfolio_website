@@ -12,6 +12,10 @@
   --radius: 18px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
