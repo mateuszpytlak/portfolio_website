@@ -2,7 +2,7 @@ function Footer() {
   return (
     <footer className="border-t border-white/10 py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-xs text-[var(--muted)] md:flex-row">
-        <p>© 2026 Mateusz Pytlak. Built with React, TypeScript, and Tailwind.</p>
+        <p>© {new Date().getFullYear()} Mateusz Pytlak. Built with React, TypeScript, and Tailwind.</p>
         <div className="flex flex-wrap items-center gap-4">
           <a
             className="hover:text-white"
