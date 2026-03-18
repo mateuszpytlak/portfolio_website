@@ -44,6 +44,11 @@ a {
   text-decoration: none;
 }
 
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 a:where(:not([class])) {
   color: inherit;
 }
