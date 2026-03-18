@@ -26,7 +26,6 @@ See `.env.example` for all variables. Required for full functionality:
 | Variable | Description |
 |---|---|
 | `VITE_FORMSPREE_ENDPOINT` | Formspree form URL — get from [formspree.io](https://formspree.io) |
-| `VITE_SENTRY_DSN` | Sentry DSN for error tracking — leave empty to disable |
 
 ## Scripts
 
