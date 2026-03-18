@@ -63,7 +63,7 @@ export const projects = [
     summary:
       'Utility SPA for Arc Raiders loot planning with smart grouping, live search, collapsible sections, and persistent bench settings.',
     result: 'Showcases data-driven UI architecture and responsive UX.',
-    live: 'https://arc-raiders-loot-table-steel.vercel.app',
+    live: 'https://arc-raiders-loot-table-xi.vercel.app/',
     repo: 'https://github.com/mateuszpytlak/arc_raiders_loot_table/',
     thumbGallery: [arcRaidersThumb1, arcRaidersThumb2],
     gallery: [arcRaidersScreen1, arcRaidersScreen2],
