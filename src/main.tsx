@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import '@fontsource-variable/manrope'
 import '@fontsource-variable/space-grotesk'
 import './index.css'
@@ -14,5 +15,6 @@ createRoot(document.getElementById('root')!).render(
         <App />
       </BrowserRouter>
     </ErrorBoundary>
+    <Analytics />
   </StrictMode>,
 )
