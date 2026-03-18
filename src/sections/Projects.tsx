@@ -1,7 +1,9 @@
+import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { projects } from '../data/projects'
+import { fadeUp, staggerContainer } from '../lib/animations'
 
 type Project = (typeof projects)[number]
 
@@ -60,7 +62,8 @@ function ProjectCard({ project }: ProjectCardProps) {
   }
 
   return (
-    <article
+    <motion.article
+      variants={fadeUp}
       className="relative flex h-full flex-col rounded-(--radius) border border-white/10 bg-(--surface)/80 p-6 shadow-[0_30px_80px_rgba(7,10,18,0.5)] transition hover:-translate-y-1 hover:border-white/30"
       onMouseEnter={handleHoverStart}
       onMouseLeave={handleHoverEnd}
@@ -156,14 +159,20 @@ function ProjectCard({ project }: ProjectCardProps) {
       <p className="mt-auto pt-6 text-sm font-semibold text-white">
         Outcome: {project.result}
       </p>
-    </article>
+    </motion.article>
   )
 }
 
 function Projects() {
   return (
     <section className="space-y-8" id="projects">
-      <div className="flex flex-wrap items-end justify-between gap-4">
+      <motion.div
+        className="flex flex-wrap items-end justify-between gap-4"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <div className="space-y-2">
           <p className="text-xs uppercase tracking-[0.3em] text-(--muted)">
             Selected projects
@@ -175,12 +184,19 @@ function Projects() {
         <a className="text-sm font-semibold text-(--accent)" href="#contact">
           Request full case studies
         </a>
-      </div>
-      <div className="grid gap-6 lg:grid-cols-3">
+      </motion.div>
+
+      <motion.div
+        className="grid gap-6 lg:grid-cols-3"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.1 }}
+      >
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }
