@@ -1,4 +1,4 @@
-export const services = [
+export const strengths = [
   {
     title: 'Product UI delivery',
     detail: 'Translate designs into responsive, polished interfaces. From Figma handoff to pixel-perfect implementation.',

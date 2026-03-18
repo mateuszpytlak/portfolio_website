@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 
-import { services } from '../data/services'
+import { strengths } from '../data/strengths'
 import { fadeUp, staggerContainer } from '../lib/animations'
 
-function Services() {
+function Strengths() {
   return (
-    <section className="space-y-8" id="services">
+    <section className="space-y-8" id="strengths">
       <motion.div
         className="flex flex-wrap items-end justify-between gap-4"
         variants={fadeUp}
@@ -34,14 +34,14 @@ function Services() {
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {services.map((service) => (
+        {strengths.map((item) => (
           <motion.div
             variants={fadeUp}
             className="group rounded-(--radius) border border-white/10 bg-(--bg-alt)/60 p-6 transition hover:-translate-y-1 hover:border-white/30"
-            key={service.title}
+            key={item.title}
           >
-            <h3 className="text-xl font-semibold">{service.title}</h3>
-            <p className="mt-3 text-sm text-(--muted)">{service.detail}</p>
+            <h3 className="text-xl font-semibold">{item.title}</h3>
+            <p className="mt-3 text-sm text-(--muted)">{item.detail}</p>
           </motion.div>
         ))}
       </motion.div>
@@ -49,4 +49,4 @@ function Services() {
   )
 }
 
-export default Services
+export default Strengths

@@ -22,7 +22,7 @@ function Header() {
         <a className="inline-flex items-center py-2 hover:text-white" href="/#about">
           About
         </a>
-        <a className="inline-flex items-center py-2 hover:text-white" href="/#services">
+        <a className="inline-flex items-center py-2 hover:text-white" href="/#strengths">
           Strengths
         </a>
         <a className="inline-flex items-center py-2 hover:text-white" href="/#projects">
