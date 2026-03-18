@@ -1,9 +1,7 @@
 function ProjectOverviewMotorsport() {
   return (
     <div className="space-y-6">
-      <h3 className="text-xl font-semibold">
-        Motorsport Weekend - Technical Project Description
-      </h3>
+      <h3 className="text-xl font-semibold">Motorsport Weekend</h3>
 
       <h4 className="text-lg font-semibold text-[var(--text)]">Overview</h4>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
@@ -155,14 +153,13 @@ function ProjectOverviewMotorsport() {
         <li>SharedPreferences storage</li>
       </ul>
 
-      <h4 className="text-lg font-semibold text-[var(--text)]">
-        Why this project is relevant
-      </h4>
+      <h4 className="text-lg font-semibold text-[var(--text)]">Notes</h4>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        This project demonstrates: practical widget engineering and RemoteViews
-        constraints, efficient data fetching, caching, and transformation logic,
-        resilient UX behavior under unreliable external data sources, and clean
-        separation between data, preferences, and UI rendering logic.
+        AppWidget development has real constraints - no Views, limited update
+        frequency, RemoteViews only. Working within those limits while keeping
+        the widget reliable and readable was the main challenge here. The
+        Kotlin and Android parts were new to me, so the whole build was done
+        with AI guidance.
       </p>
     </div>
   )

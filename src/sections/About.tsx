@@ -30,15 +30,14 @@ function About() {
           Frontend developer focused on shipping reliable UI.
         </h2>
         <p className="text-[var(--muted)]">
-          I hold an MEng in Building Services Engineering from Poznan University of
-          Technology and transitioned into frontend development. I build and
-          refine web experiences with a focus on clarity, performance, and
-          maintainability.
+          I have an MEng in Building Services Engineering from Poznan University
+          of Technology and moved into frontend development. I've worked across
+          React, Angular, Vue, PHP, and WordPress over the past 5 years.
         </p>
         <p className="text-[var(--muted)]">
-          After 5 years across multiple stacks, I am focused on React +
-          TypeScript, collaborating closely with design and product to deliver
-          production-ready interfaces.
+          Right now I'm focused on React + TypeScript. I work closely with
+          design and product - translating specs into working UI and catching
+          issues before they reach review.
         </p>
       </div>
       <div className="space-y-4">

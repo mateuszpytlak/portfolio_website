@@ -15,14 +15,14 @@ function Hero() {
         </div>
         <div className="space-y-6">
           <h1 className="display text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl">
-            Mateusz Pytlak — Frontend Developer building clean, modern React
-            interfaces.
+            Mateusz Pytlak - Frontend Developer. React, TypeScript, Tailwind.
           </h1>
           <p className="max-w-xl text-base text-[var(--muted)] md:text-lg">
             5 years in web development across React, Angular, Vue, PHP, and
-            WordPress. I am now focused on React, TypeScript, and Tailwind to
-            build scalable UI. I also use AI tools to speed up delivery while
-            keeping quality high.
+            WordPress. These days I'm focused on React + TypeScript - clean
+            components, good performance, working closely with design. AI tools
+            are part of the day-to-day; they help me move faster on the routine
+            stuff.
           </p>
         </div>
         <div className="flex flex-wrap gap-4">

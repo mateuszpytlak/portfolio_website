@@ -1,30 +1,20 @@
 function ProjectOverviewArcRaiders() {
   return (
     <div className="space-y-6">
-      <h3 className="text-xl font-semibold">
-        ARC Raiders Loot Table - Technical Project Description
-      </h3>
+      <h3 className="text-xl font-semibold">ARC Raiders Loot Table</h3>
 
       <h4 className="text-lg font-semibold text-[var(--text)]">Overview</h4>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        ARC Raiders Loot Table is a single-page React application that helps
-        players make fast, confident decisions about what loot to keep, upgrade,
-        or recycle. The UI organizes a large, curated dataset of items into
-        actionable categories, highlights upgrade requirements per workbench,
-        and supports search, compact viewing, and progressive disclosure so that
-        players can scan information quickly under pressure.
+        ARC Raiders Loot Table is a single-page React app that helps players
+        decide what loot to keep, upgrade, or recycle. Items are split into
+        categories, workbench upgrade requirements are visible at a glance,
+        and search with collapsible sections keeps the list manageable.
       </p>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        The app is designed as a portfolio-grade example of a data-driven UI:
-        clean separation between data, domain logic, and presentation, with
-        strong TypeScript typing and clear component boundaries. It is optimized
-        for fast iteration and easy content updates as the game evolves.
-      </p>
-      <p className="text-sm leading-relaxed text-[var(--muted)]">
-        The tool started as a real, personal need while playing ARC Raiders, not
-        as a purely portfolio-driven exercise. That origin shaped the product
-        decisions and kept the scope focused on practical, everyday use during
-        gameplay.
+        I built it while actually playing the game - I kept opening a
+        spreadsheet mid-session, which got old fast. That context shaped the
+        decisions: fast search, compact layout, and persistent bench settings
+        that survive a page reload.
       </p>
 
       <h4 className="text-lg font-semibold text-[var(--text)]">Core Features</h4>
@@ -133,8 +123,8 @@ function ProjectOverviewArcRaiders() {
         </li>
       </ul>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        This decomposition keeps each component focused and testable, while
-        enabling easy reuse and extension.
+        Each component has a single responsibility, which made debugging and
+        adding new sections straightforward.
       </p>
 
       <h4 className="text-lg font-semibold text-[var(--text)]">
@@ -165,8 +155,7 @@ function ProjectOverviewArcRaiders() {
         </li>
       </ul>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        The approach avoids heavyweight state libraries while still providing
-        reliable, user-friendly persistence.
+        No state library needed - a small custom hook handles everything.
       </p>
 
       <h4 className="text-lg font-semibold text-[var(--text)]">
@@ -187,8 +176,7 @@ function ProjectOverviewArcRaiders() {
         </li>
       </ul>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        This creates a focused experience for power users while keeping the UI
-        approachable for new players.
+        Works well for both quick scans and deeper filtering.
       </p>
 
       <h4 className="text-lg font-semibold text-[var(--text)]">
@@ -209,8 +197,8 @@ function ProjectOverviewArcRaiders() {
         </li>
       </ul>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        This logic turns a static dataset into a practical planning tool, which
-        is the core value proposition of the app.
+        This turns the item list into an actual planning tool, not just a
+        reference table.
       </p>
 
       <h4 className="text-lg font-semibold text-[var(--text)]">
@@ -231,8 +219,8 @@ function ProjectOverviewArcRaiders() {
         </li>
       </ul>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        The result is a modern UI that is easy to scan and consistent across
-        devices.
+        The grid works well from a small phone to a wide desktop without any
+        custom breakpoint hacks.
       </p>
 
       <h4 className="text-lg font-semibold text-[var(--text)]">
@@ -252,15 +240,15 @@ function ProjectOverviewArcRaiders() {
         </li>
       </ul>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        This demonstrates attention to privacy and production-ready tracking
-        practices.
+        Analytics only activate after the user accepts the cookie banner -
+        nothing fires by default.
       </p>
 
       <h4 className="text-lg font-semibold text-[var(--text)]">
         Tooling and Build
       </h4>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        The project uses a modern, recruiter-friendly stack:
+        Stack:
       </p>
       <ul className="list-disc space-y-2 pl-5 text-sm text-[var(--muted)]">
         <li>React 19 + TypeScript for type-safe UI development</li>
@@ -273,29 +261,12 @@ function ProjectOverviewArcRaiders() {
         ensuring type safety in CI/CD workflows.
       </p>
 
-      <h4 className="text-lg font-semibold text-[var(--text)]">
-        Why This Project Stands Out
-      </h4>
-      <ul className="list-disc space-y-2 pl-5 text-sm text-[var(--muted)]">
-        <li>
-          Data-driven UI with clear domain modeling and maintainable structure.
-        </li>
-        <li>
-          Strong UX decisions: collapsing logic, compact mode, and progression
-          tracking.
-        </li>
-        <li>
-          Clean separation of concerns: data, state, view, and analytics modules
-          are isolated.
-        </li>
-        <li>
-          Real-world readiness: persistence, analytics consent, and responsive
-          behavior are implemented end to end.
-        </li>
-      </ul>
+      <h4 className="text-lg font-semibold text-[var(--text)]">Notes</h4>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        This makes the app a strong showcase of frontend engineering
-        fundamentals, product thinking, and maintainable React architecture.
+        The data model and content are easy to update as the game changes -
+        adding items or adjusting bench requirements doesn't touch UI code.
+        I've updated it several times since the early access launch and it took
+        minutes each time.
       </p>
     </div>
   )

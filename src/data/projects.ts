@@ -30,16 +30,16 @@ export const projects = [
     ],
     summary:
       'E-commerce demo with product discovery, cart persistence, and a validated checkout flow powered by Fake Store API.',
-    result: 'Focused on clean component structure, global state, and API integration.',
+    result: 'Covers API integration, persistent cart state, auth, and basic test coverage.',
     live: 'https://react-store-demo-six.vercel.app/products',
     repo: 'https://github.com/mateuszpytlak/react-store-demo',
     thumbGallery: [ecommerceThumb1, ecommerceThumb2, ecommerceThumb3, ecommerceThumb4],
     gallery: [ecommerceScreen1, ecommerceScreen2, ecommerceScreen3, ecommerceScreen4],
     description: [
-      'React Store Demo is a modern e-commerce storefront built with React 19 + TypeScript and bundled with Vite. It consumes the public Fake Store API to provide a complete product browsing experience with category filtering, debounced text search, and multiple sorting modes. The UI is tailored for a polished portfolio presentation with card-based layouts, glassmorphism styling, and responsive grids that scale from mobile to desktop.',
+      'React Store Demo is an e-commerce storefront built with React 19 + TypeScript, bundled with Vite. It pulls from the public Fake Store API and covers category filtering, debounced search, and sorting. The layout uses cards and responsive grids that scale from mobile to desktop.',
       'Product discovery loads all products once and caches them in a persisted Zustand store to minimize repeat fetches. Users can filter by category, search by title, and sort by price or title with consistent state across views. Individual product pages fetch by id, display metadata and ratings, and enable add-to-cart actions.',
       'The cart is persistent with quantity controls, totals, item removal, and a summary panel; totals are computed in-store. Checkout uses React Hook Form + Zod validation, simulates a processing delay, and clears the cart on submit. Firebase Authentication powers login and registration, while the My Orders view reads history from Firestore for authenticated users.',
-      'The codebase separates concerns with dedicated API, store, and page layers; the API module encapsulates fetchProducts, fetchProductById, and fetchCategories with error handling. Stores are split by domain (cart, products, auth) and persist state to localStorage for a resilient UX. Routing uses React Router v7 with dedicated pages for products, product details, cart, checkout, login, and account; loading and error states are handled in all data-driven views. Tests cover utilities, API logic, product cards, cart interactions, and store math.',
+      'API, store, and page layers are kept separate. Zustand stores are split by domain (cart, products, auth) and persist to localStorage. Routing is handled by React Router v7. Loading and error states are covered in all data-driven views. Tests cover utilities, API logic, product cards, cart interactions, and store math.',
     ],
     challenges: [
       'Normalizing API data and keeping UI state consistent across views.',
@@ -62,7 +62,7 @@ export const projects = [
     ],
     summary:
       'Utility SPA for Arc Raiders loot planning with smart grouping, live search, collapsible sections, and persistent bench settings.',
-    result: 'Showcases data-driven UI architecture and responsive UX.',
+    result: 'Built for personal use - search, grouping, and bench tracking all driven by real gameplay needs.',
     live: 'https://arc-raiders-loot-table-xi.vercel.app/',
     repo: 'https://github.com/mateuszpytlak/arc_raiders_loot_table/',
     thumbGallery: [arcRaidersThumb1, arcRaidersThumb2],

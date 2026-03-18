@@ -1,16 +1,13 @@
 function ProjectOverviewEcommerce() {
   return (
     <div className="space-y-6">
-      <h3 className="text-xl font-semibold">
-        React Store Demo - Technical Project Description
-      </h3>
+      <h3 className="text-xl font-semibold">React Store Demo</h3>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        React Store Demo is a modern e-commerce storefront built with React 19 +
-        TypeScript and bundled with Vite. It consumes the public Fake Store API
-        to deliver a complete product browsing experience, with category
-        filtering, debounced search, and multiple sorting modes. The UI is
-        tailored for a portfolio presentation: card-based layouts, glassmorphism
-        styling, and responsive grids that scale cleanly from mobile to desktop.
+        React Store Demo is an e-commerce storefront built with React 19 +
+        TypeScript, bundled with Vite. It consumes the public Fake Store API
+        and covers category filtering, debounced search, and multiple sorting
+        modes. The layout uses cards and responsive grids that scale from
+        mobile to desktop.
       </p>
 
       <h4 className="text-lg font-semibold text-[var(--text)]">
@@ -128,10 +125,10 @@ function ProjectOverviewEcommerce() {
 
       <h4 className="text-lg font-semibold text-[var(--text)]">Summary</h4>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        This project demonstrates production-style front-end architecture:
-        modular data access, persistent client state, validated forms,
-        authenticated sections, and clean test coverage, packaged into a
-        polished storefront experience ready for portfolio presentation.
+        The app covers the full front-end scope: API layer, persistent state,
+        validated forms, auth-protected routes, and unit tests. It was a good
+        exercise in wiring together multiple tools without the architecture
+        getting messy.
       </p>
     </div>
   )

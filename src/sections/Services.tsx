@@ -13,8 +13,8 @@ function Services() {
           </h2>
         </div>
         <p className="max-w-lg text-sm text-[var(--muted)]">
-          I focus on reliable UI delivery, clean collaboration with design, and
-          steady iteration with product and engineering.
+          I work directly with design and product - turning specs into
+          working UI and iterating until it's right.
         </p>
       </div>
       <div className="grid gap-6 md:grid-cols-3">

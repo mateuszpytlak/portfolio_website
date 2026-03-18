@@ -5,7 +5,7 @@ export const services = [
   },
   {
     title: 'Component systems',
-    detail: 'Consistent patterns, reusable UI, and scalable structure.',
+    detail: 'Shared patterns and reusable components that hold up as the product grows.',
   },
   {
     title: 'Performance + accessibility',

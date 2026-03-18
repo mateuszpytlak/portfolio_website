@@ -62,7 +62,7 @@ class ErrorBoundary extends Component<Props, State> {
               maxWidth: '360px',
             }}
           >
-            An unexpected error occurred. Try refreshing the page — if the
+            An unexpected error occurred. Try refreshing the page - if the
             problem persists, it's on our end.
           </p>
           <div style={{ marginTop: '32px', display: 'flex', gap: '12px' }}>
