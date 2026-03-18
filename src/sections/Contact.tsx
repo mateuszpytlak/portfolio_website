@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 
 import { contactSchema } from '../lib/contactSchema'
 
-const formEndpoint = 'https://formspree.io/f/xqeekpge'
+const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT as string
 
 function Contact() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
