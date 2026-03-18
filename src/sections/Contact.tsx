@@ -1,26 +1,8 @@
 import { useState, type FormEvent } from 'react'
-import { z } from 'zod'
+
+import { contactSchema } from '../lib/contactSchema'
 
 const formEndpoint = 'https://formspree.io/f/xqeekpge'
-const contactSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(2, 'Please enter your name.')
-    .max(80, 'Name is too long.'),
-  email: z.string().trim().email('Please enter a valid email.'),
-  title: z
-    .string()
-    .trim()
-    .max(120, 'Message title is too long.')
-    .optional()
-    .or(z.literal('')),
-  message: z
-    .string()
-    .trim()
-    .min(10, 'Please add a few details.')
-    .max(1000, 'Message is too long.'),
-})
 
 function Contact() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
