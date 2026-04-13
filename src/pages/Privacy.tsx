@@ -1,7 +1,15 @@
+import type { MouseEvent } from 'react'
+
 import PageShell from '../components/PageShell'
 
 function Privacy() {
-  const email = ['gptrackersupport', '@', 'gmail.com'].join('')
+  const emailParts = ['mpytlak', '.', 'ar', '@', 'gmail', '.', 'com'] as const
+  const email = emailParts.join('')
+
+  const handleEmailClick = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+    window.location.href = `mailto:${email}`
+  }
 
   return (
     <PageShell mainClassName="py-12 md:py-16" withDecorations={false}>
@@ -22,12 +30,13 @@ function Privacy() {
             Mateusz Pytlak
             <br />
             Contact:{' '}
-            <a
-              className="text-[var(--text)] hover:text-[var(--accent)]"
-              href={`mailto:${email}`}
+            <button
+              className="cursor-pointer text-[var(--text)] hover:text-[var(--accent)]"
+              onClick={handleEmailClick}
+              type="button"
             >
               {email}
-            </a>
+            </button>
           </p>
         </section>
 
