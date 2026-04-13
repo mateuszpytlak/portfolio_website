@@ -2,10 +2,8 @@ import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { projects } from '../data/projects'
+import { projects, type Project } from '../data/projects'
 import { fadeUp, staggerContainer } from '../lib/animations'
-
-type Project = (typeof projects)[number]
 
 type ProjectCardProps = {
   project: Project
@@ -127,6 +125,16 @@ function ProjectCard({ project }: ProjectCardProps) {
               rel="noreferrer"
             >
               Live
+            </a>
+          ) : null}
+          {project.storeUrl ? (
+            <a
+              className="relative z-20 hover:text-white"
+              href={project.storeUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Google Play
             </a>
           ) : null}
           {project.repo ? (

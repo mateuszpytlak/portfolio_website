@@ -16,6 +16,7 @@ vi.mock('../data/projects', () => ({
       summary: 'A test project summary that describes the work done.',
       result: 'Delivered clean, tested UI components.',
       live: 'https://example.com',
+      storeUrl: 'https://play.google.com/store/apps/details?id=com.example.app',
       repo: 'https://github.com/example/repo',
       thumbGallery: ['/thumb1.png', '/thumb2.png'],
       gallery: ['/screen1.png'],
@@ -97,6 +98,15 @@ describe('ProjectCard', () => {
     renderProjects()
     const repoLink = screen.getByRole('link', { name: /github/i })
     expect(repoLink).toHaveAttribute('href', 'https://github.com/example/repo')
+  })
+
+  it('renders Google Play link when project has a store URL', () => {
+    renderProjects()
+    const storeLink = screen.getByRole('link', { name: /google play/i })
+    expect(storeLink).toHaveAttribute(
+      'href',
+      'https://play.google.com/store/apps/details?id=com.example.app',
+    )
   })
 
   it('does not render Live link when project has no live URL', () => {

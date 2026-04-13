@@ -1,22 +1,45 @@
-function ProjectOverviewMotorsport() {
+type ProjectOverviewMotorsportProps = {
+  storeUrl?: string
+}
+
+function ProjectOverviewMotorsport({
+  storeUrl,
+}: ProjectOverviewMotorsportProps) {
   return (
     <div className="space-y-6">
-      <h3 className="text-xl font-semibold">Motorsport Weekend</h3>
+      <h3 className="text-xl font-semibold">GP Tracker</h3>
 
       <h4 className="text-lg font-semibold text-[var(--text)]">Overview</h4>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        Motorsport Weekend is a Kotlin-based Android App Widget that surfaces
-        the next race weekend schedule directly on the home screen. The widget
-        focuses on fast glanceability (race name, circuit, session list,
-        countdown) and robust behavior even when the API is delayed or offline.
+        Officially available on Google Play
+        {storeUrl ? (
+          <>
+            {' '}
+            (
+            <a
+              className="text-[var(--accent)] underline decoration-white/20 underline-offset-4 transition hover:text-white"
+              href={storeUrl}
+              rel="noreferrer"
+              target="_blank"
+            >
+              link
+            </a>
+            )
+          </>
+        ) : null}
+        , GP Tracker is a Kotlin-based Android app widget for checking the next
+        race weekend schedule directly on the home screen. The product focuses
+        on fast glanceability, showing the race name, circuit, session list,
+        and countdown while staying robust when the API is delayed or offline.
       </p>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
         The project was born from a real, personal need as a Formula 1 fan who
         kept checking the next race schedule online. I wanted a widget I would
         actually use every day, so I built one that keeps the next weekend
-        visible at a glance. It was also a deliberate stretch: I was new to
-        Kotlin and Android development, and the entire build was completed with
-        AI-assisted guidance.
+        visible at a glance. It has since been polished into an official Google
+        Play release. It was also a deliberate stretch: I was new to Kotlin and
+        Android development, and the entire build was completed with AI-assisted
+        guidance.
       </p>
 
       <h4 className="text-lg font-semibold text-[var(--text)]">Key features</h4>

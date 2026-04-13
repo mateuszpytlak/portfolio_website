@@ -13,7 +13,24 @@ import ecommerceThumb4 from '../assets/ecommerce_thumb_4.png?format=webp'
 import f1WidgetScreen1 from '../assets/f1_widget_screen_1.jpg?format=webp'
 import f1WidgetScreen2 from '../assets/f1_widget_screen_2.jpg?format=webp'
 
-export const projects = [
+export type Project = {
+  slug: string
+  title: string
+  role: string
+  stack: string[]
+  stackDetailed: string[]
+  summary: string
+  result: string
+  live?: string
+  repo?: string
+  storeUrl?: string
+  thumbGallery: string[]
+  gallery: string[]
+  description: string[]
+  challenges: string[]
+}
+
+export const projects: Project[] = [
   {
     slug: 'mini-ecommerce-app',
     title: 'Mini e-Commerce App',
@@ -79,8 +96,8 @@ export const projects = [
     ],
   },
   {
-    slug: 'f1-weekend-widget',
-    title: 'F1 Weekend Schedule Widget',
+    slug: 'gp-tracker',
+    title: 'GP Tracker',
     role: 'Android Developer',
     stack: ['Kotlin', 'Android', 'AppWidget'],
     stackDetailed: [
@@ -92,14 +109,17 @@ export const projects = [
       'Android OS',
     ],
     summary:
-      'Android widget that shows the next Formula 1 weekend schedule with caching, time zone controls, and multiple layouts.',
-    result: 'Built with AI-assisted Kotlin while expanding into mobile development.',
+      'GP Tracker is a compact Android widget published on Google Play for tracking the next Formula 1 race weekend.',
+    result:
+      'Officially published on Google Play as a production Android app.',
+    storeUrl:
+      'https://play.google.com/store/apps/details?id=com.matpyt.gptracker',
     thumbGallery: [f1WidgetScreen2, f1WidgetScreen1],
     gallery: [f1WidgetScreen2, f1WidgetScreen1],
     description: [
-      'A compact Android widget that surfaces the next F1 weekend schedule at a glance.',
+      'Officially available on Google Play, GP Tracker is a compact Android widget for checking the next Formula 1 race weekend at a glance.',
       'It supports multiple layouts, time zone adjustments, and cached data to avoid unnecessary fetches.',
-      'This project helped me translate API data into a tight, readable UI on mobile.',
+      'This project helped me translate API data into a tight, readable mobile UI and ship it as a real store release.',
     ],
     challenges: [
       'Working within AppWidget update limits and background scheduling.',
