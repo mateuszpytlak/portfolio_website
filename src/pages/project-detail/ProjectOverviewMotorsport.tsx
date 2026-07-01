@@ -37,9 +37,14 @@ function ProjectOverviewMotorsport({
         kept checking the next race schedule online. I wanted a widget I would
         actually use every day, so I built one that keeps the next weekend
         visible at a glance. It has since been polished into an official Google
-        Play release. It was also a deliberate stretch: I was new to Kotlin and
-        Android development, and the entire build was completed with AI-assisted
-        guidance.
+        Play release. It was also a deliberate experiment in AI-assisted
+        product development outside my usual frontend stack. Kotlin and Android
+        widgets were new to me, so the implementation relied heavily on AI
+        support, while I guided the build step by step: defining the product
+        behavior, checking whether each iteration matched the goal, and
+        adjusting the direction when Android widget constraints changed what was
+        realistic. For example, I made the calls on the refresh strategy and on
+        how the widget should behave when API data was delayed or missing.
       </p>
 
       <h4 className="text-lg font-semibold text-[var(--text)]">Key features</h4>
@@ -178,11 +183,15 @@ function ProjectOverviewMotorsport({
 
       <h4 className="text-lg font-semibold text-[var(--text)]">Notes</h4>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        AppWidget development has real constraints - no Views, limited update
-        frequency, RemoteViews only. Working within those limits while keeping
-        the widget reliable and readable was the main challenge here. The
-        Kotlin and Android parts were new to me, so the whole build was done
-        with AI guidance.
+        AppWidget development has real constraints — no standard Views, limited
+        update frequency, and RemoteViews-only rendering. Working within those
+        limits while keeping the widget reliable, readable, and
+        battery-conscious was the main challenge. Kotlin and Android widget
+        development were new to me, so the project was built with heavy AI
+        implementation support. My role was to guide the product direction and
+        technical trade-offs throughout the build, especially around refresh
+        behavior, battery impact, and how the widget should handle stale or
+        missing data.
       </p>
     </div>
   )
