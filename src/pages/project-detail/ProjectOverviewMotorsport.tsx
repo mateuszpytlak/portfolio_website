@@ -39,7 +39,7 @@ function ProjectOverviewMotorsport({
         visible at a glance. It has since been polished into an official Google
         Play release. It was also a deliberate experiment in AI-assisted
         product development outside my usual frontend stack. Kotlin and Android
-        widgets were new to me, so the implementation relied heavily on AI
+        development were new to me, so the implementation relied heavily on AI
         support, while I guided the build step by step: defining the product
         behavior, checking whether each iteration matched the goal, and
         adjusting the direction when Android widget constraints changed what was
