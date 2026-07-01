@@ -183,15 +183,13 @@ function ProjectOverviewMotorsport({
 
       <h4 className="text-lg font-semibold text-[var(--text)]">Notes</h4>
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        AppWidget development has real constraints — no standard Views, limited
-        update frequency, and RemoteViews-only rendering. Working within those
-        limits while keeping the widget reliable, readable, and
-        battery-conscious was the main challenge. Kotlin and Android widget
-        development were new to me, so the project was built with heavy AI
-        implementation support. My role was to guide the product direction and
-        technical trade-offs throughout the build, especially around refresh
-        behavior, battery impact, and how the widget should handle stale or
-        missing data.
+        This project forced me to work through platform constraints I did not
+        know at the start, especially around how Android widgets render and how
+        often they can update. Kotlin and Android development were new to me, so
+        the project was built with heavy AI implementation support. My role was
+        to guide the product direction and technical trade-offs throughout the
+        build, especially around refresh behavior, battery impact, and how the
+        widget should handle stale or missing data.
       </p>
     </div>
   )
